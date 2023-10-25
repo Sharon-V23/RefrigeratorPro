@@ -17,7 +17,7 @@ namespace RefrigeratorProject
             var gameFunctions = new ConsoleFunctions(currentRefrigerator, refrigerators);
 
 
-
+             
             Console.WriteLine("Console Application in C# for Refrigerators\r");
             Console.WriteLine("------------------------\n");
 
@@ -39,8 +39,9 @@ namespace RefrigeratorProject
 
             var selectedAction = Console.ReadLine();
 
-         
 
+
+            while (!selectedAction.Equals("100")) { 
                 switch (selectedAction)
                 {
                     case "1":
@@ -75,17 +76,16 @@ namespace RefrigeratorProject
                     case "10":
                         gameFunctions.GetReadyForShopping();
                         break;
-                    case "100":
-                        Console.WriteLine("You entered to finish the game.");
-                        return;
+
                 default:
                         Console.WriteLine("You did not enter any of the options above.");
                         break;
                 }
                 selectedAction = Console.ReadLine();
-      
+   
 
-
+            }
+        
         }
 
         public static List<Refrigerator> CreateRefrigerators()
